@@ -57,7 +57,7 @@ resource "azurerm_virtual_machine" "modulo7-ado-vm" {
   # }
 
   provisioner "file" {
-    source      = "/scripts/register.sh"
+    source      = "scripts/register.sh"
     destination = "/tmp/register.sh"
 
     connection {
@@ -70,8 +70,8 @@ resource "azurerm_virtual_machine" "modulo7-ado-vm" {
 
   # provisioner "remote-exec" {
   #   inline = [
-  #     "chmod +x ./tmp/register.sh",
-  #     "./tmp/register.sh ${var.ado_token}",
+  #     "chmod +x /tmp/register.sh",
+  #     "/tmp/register.sh ${var.ado_token}",
   #   ]
 
   #   connection {
